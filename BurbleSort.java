@@ -25,9 +25,12 @@ public class BurbleSort{
     int vector1[] = {11, 5, 6, 3, 8, 2, 10, 7, 8, 32};
     int vector2[] = vector1;
 
-    // First orginize method
-    vector1_sort = Burble_method(vector1);
+    // First organize method
+    int vector1_sort[] = Burble_method(vector1);
     for(int auxiliar_var: vector1){   System.out.print(" " + auxiliar_var); }
     System.out.println();
+    
+    // Second organize method
+    int vector2_sort[] = Burble_method_optimized(vector2)
   }
 }
