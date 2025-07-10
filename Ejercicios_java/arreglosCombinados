@@ -1,0 +1,36 @@
+package Java_Oracle.Arreglos;
+
+public class ArreglosCombinados {
+    public static void main(String[] args) {
+        int[] arr1, arr2, arr3;
+        arr1 = new int[10];
+        arr2 = new int[10];
+        arr3 = new int[arr1.length + arr2.length];
+        // Relleno de vector a
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = i+1;
+        }
+        // Relleno de vector b
+        for(int j = 0; j < arr2.length; j++){
+            arr2[j] = (j+1) * 5;
+        }
+        // Relleno de vector c
+        int iter1 = 0;
+        int iter2 = 0;
+        int aux = 0;
+        for (int k = 0; k < arr1.length; k+=2) { //itera 20 veces
+            for (int l = 0; l < 2; l++) {
+                arr3[aux++] = arr1[k + l]; // Segundo indice de control de almacenamiento en arr3
+            }
+            for (int m = 0; m < 2; m++) {
+                arr3[aux++] = arr2[k + m]; // k para seguir la posicion, m para agregar 2 elementos
+            }
+            //if (aux == 10) { aux = 0; break; }
+            //arr3[k] = k % 2 == 0 ? arr1[iter1++] : arr2[iter2++];
+        }
+        int conteo = 1;
+        for (int elemento : arr3){
+            System.out.println(conteo++ + ". elemento = " + elemento);
+        }
+    }
+}
