@@ -1,6 +1,6 @@
 package OrientadoObjetos;
 
-public class EjemploAutomovil {
+public class EjemploAutomovil1 {
     public static void main(String[] args){
         Automovil movilC = new Automovil();
         // Ocultamiento del estado de un objeto mediante setter y getters:
