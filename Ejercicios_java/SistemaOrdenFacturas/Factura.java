@@ -89,14 +89,41 @@ public class Factura {
                 .append("\n")
                 .append("\n#\tNombre\t$\tCant.\tTotal\n");
 
+        // Agregacion de fechas a factura
+        SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM, yyyy");
+        sb.append("Fecha Emision: ")
+            .append(df.format(this.fecha))
+            .append("\n");
+
+        for(ItemFactura item : this.items){
+            if(item == null){
+                continue;
+            }
+
+            sb.append(item.getProducto().getCodigo())
+                .append("\t")
+                .append(item.getProducto().getNombre())
+                .append("\t")
+                .append(item.getProducto().getPrecio())
+                .append("\t")
+                .append(item.getCantidad())
+                .append("\t")
+                .append(item.calcularImporte())
+                .append("\n")
+        }   
+        sb.append("\n Gran total: ")
+            .append(calcularTotal());
+            
         return sb.toString();
     }
-}
 
 
-// Particular Methods of the class
-    /*public double calcularTotal(){
 
-    }*/
+
 
 }
+
+
+
+
+
