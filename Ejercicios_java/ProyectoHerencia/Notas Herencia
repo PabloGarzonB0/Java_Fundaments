@@ -1,0 +1,46 @@
+Que es la herencia?
+Es el mecanismo de la programacion orientada a objetos para implementar relaciones de jerarquia de clases.
+Una subclase hereda el estado y el comportamiento de todos sus ancestros, es una de las bases de reutilizacion de codigo
+y polimorfismo.
+Una subclase hereda el estado y el comportamiento de todos sus ancestros. Es una de las bases de reutilizacion de codigo
+y polimorfismo.
+Si no existe una relacion de parentesco no se debe utilizar la herencia entre dos clases que no tienen familiaridad.
+
+Las formas de implementar la herencia implica la generalizacion y la especializacion. En primera instancia,
+la generalizacion permite agrupar en una unica clase el comportamiento que puede ser utilizado por multiples subclases,
+mientras que la especializacion permite realizar desarrollo particulares en las subclases.
+
+La herencia permite escribir un metodo que heredamos de la clase padre (Sobreescritura), puede hacerse redefiniendo
+en la clase hija el metodo que existe en la clase padre pero modificando su comportamiento.
+
+Dentro de la **sobreescritura** del metodo, es posible modificar una parte en la clase hija de la siguiente manera:
+
+public class Alumno extends Persona{
+[...]
+  @Override
+  public void metodoDelPadre(){
+    super.metodoDelPadre();
+    [...]
+  }
+}
+
+se puede reutilizar el toString() del padre lo invocamos con super:
+public class Persona{
+    [...]
+     @Override
+     public String toString(){
+        return this.nombre + " " + this.apellido;
+     }
+}
+
+public class Alumno extends Persona{
+    [...]
+        @Override
+        public String toString(){
+            return super.toString() + ", promedio:" + this.promedio;
+        }
+}
+# Nota importante:
+Para impedir la herencia usamos la palabra final, el cual evita que se pueda pasar metodos y atributos a clases hijas.
+Si utilizamos el indicador de clase tipo final, esto quiere decir que no se puede heredar
+
