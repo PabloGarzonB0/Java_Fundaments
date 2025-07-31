@@ -1,0 +1,37 @@
+package Java_Oracle.claseAbstracta.select;
+
+public class Opcion {
+    private String nombre;
+    private String valor;
+    private boolean selected;
+
+    // Constructores
+    public Opcion(){
+    }
+
+    public Opcion(String nombre, String valor){
+        this.nombre = nombre;
+        this.valor = valor;
+    }
+
+    // Getter and Setters
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public boolean isSelected() {
+        return selected;
+    }
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+    public String getValor() {
+        return valor;
+    }
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+}

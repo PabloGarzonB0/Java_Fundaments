@@ -1,0 +1,32 @@
+LA CLASE ABSTRACTA
+
+Las clases abstractas representan un concepto generico o conceptual y como tal, no debe ser ejemplarizada,
+No se crean instancias de este tipo de clase, sino de la clase hijas, su metodos son abstractos y deben ser implemntados
+por las clases hijas.
+
+Propiedades clave de la clase abstracta:
+
+1. Se tiene una jerarquia de clases en que algun comportamiento esta presente en todas las subclases pero se materialza
+de forma distinta en cada una.
+2. El modificador Abstract declara que la clase es una clase abstracta
+3. La clase abstracta esta disenada para ser una superclase y no puede ejemplarizarse
+
+
+Estrutura de clase:
+
+abstract public class Persona{
+
+    protected Integer id;
+    protected String nombre;
+    protected String apellido;
+    protected String email;
+    protected Date fechaRegistro
+
+
+    // Solamente se definen los elementos
+    abstract public void registrar();
+    abstract public void modificar();
+    abstract public void eliminar();
+
+
+}
