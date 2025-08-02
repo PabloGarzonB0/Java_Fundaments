@@ -13,12 +13,10 @@ public class SelectForm extends ElementoForm{
         super(nombre);
         this.opciones = new ArrayList<Opcion>(); // Cuando se define una clase se le pueden dar valores
     }
-
     public SelectForm(String nombre, List<Opcion> opciones){
         super(nombre);
         this.opciones = opciones;
     }
-
     public SelectForm addOpciones(Opcion opcion){
         this.opciones.add(opcion); // El tamano del arreglo se puede incrementar automaticamente
         return this;  // Retorna un objeto del mismo tipo de la clase SelectForm
@@ -29,16 +27,16 @@ public class SelectForm extends ElementoForm{
             sb.append("name='");
             sb.append(this.nombre);
             sb.append("'>");
-
         // Impresion de todos los elementos
         for(Opcion op: opciones){ // Creacion de un elemento html
             sb.append("\n<option value='")
-                    .append(op.getValor())
+                    .append(op.getNombre())
                     .append("'");
             if(op.isSelected()){
                 sb.append(" selected");
+                this.valor = op.getValor();
             }
-            sb.append(">").append(op.getNombre())
+            sb.append(">").append(op.getValor())
                     .append("</option>");
         }
         sb.append("</select>");

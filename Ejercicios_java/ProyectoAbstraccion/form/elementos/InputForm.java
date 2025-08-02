@@ -3,7 +3,6 @@ package Java_Oracle.claseAbstracta.form.elementos;
 public class InputForm extends  ElementoForm {
     private String tipo = "text";
 
-
     // Implementacion de construtores
     public InputForm(String nombre) {
         super(nombre);
@@ -13,7 +12,6 @@ public class InputForm extends  ElementoForm {
         this.tipo = tipo;
     }
 
-
     // Implementacion de getters and setters
     public void setTipo(String tipo){
         this.tipo = tipo;
@@ -21,9 +19,6 @@ public class InputForm extends  ElementoForm {
     public String getTipo(){
         return this.tipo;
     }
-
-
-
 
     @Override
     public String dibujarHTML(){
