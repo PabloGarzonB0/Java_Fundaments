@@ -18,32 +18,41 @@ public class EjemploForm {
         InputForm password = new InputForm("clave", "password");
         InputForm email = new InputForm("email", "email");
         InputForm edad = new InputForm("edad", "number");
-        
+
         TextareaForm experiencia = new TextareaForm("exp", 5, 9);
         SelectForm lenguaje = new SelectForm("lenguaje");
 
         // Lista de elementos
         Opcion java = new Opcion("1", "Java");
+        Opcion Typescript = new Opcion("4", "Typescript");
         lenguaje.addOpciones(java)
                 .addOpciones(new Opcion("2", "Python"))
                 .addOpciones(new Opcion("3", "JavaScript"))
-                .addOpciones(new Opcion("4", "Typescript"))
+                .addOpciones(Typescript.setSelected())
                 .addOpciones(new Opcion("5", "PHP"));
 
+        ElementoForm saludar = new ElementoForm("Saludo") {
+            @Override
+            public String dibujarHTML() {
+                return "<input disabled name='"+this.nombre+"' value=\"" + this.valor+ "\">";
+            }
+        }; // Elemento anonimo
 
+        saludar.setValor("Hola que tal este campo se encuentra desabilitado");
         username.setValor("john.doe");
         password.setValor("a1b2c3");
         email.setValor("john.doe@correo.com");
         edad.setValor("28");
         experiencia.setValor("... mas de 10 anios de experiencia ...");
-        java.setSelected(true);
-
+        //java.setSelected(true);
+        //Typescript.setSelected(true);
         // Elementos de la lista elementos
         List<ElementoForm> elementos = Arrays.asList(username,
                 password,
                 edad,
                 experiencia,
-                lenguaje);
+                lenguaje,
+                saludar);
 
         for(ElementoForm e : elementos){
             System.out.println(e.dibujarHTML());
