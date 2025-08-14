@@ -1,0 +1,5 @@
+package Java_Oracle.claseAbstracta.validador.mensaje;
+
+public interface IMensajeFormateable {
+    public String getMensajeFormateado(String campo);
+}

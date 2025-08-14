@@ -2,7 +2,7 @@ package Java_Oracle.claseAbstracta.validador;
 
 public class NoNuloValidador extends Validador{
 
-    protected String mensaje = "El campo no puede ser nulo";
+    protected String mensaje = "El campo  %s no puede ser nulo";
 
     @Override
     public boolean esValido(String valor) {
