@@ -11,6 +11,7 @@ public class Libro implements Imprimible{
         this.autor = autor;
         this.titulo = titulo;
         this.genero = genero;
+        this.paginas = new ArrayList<>();
 
     }
     public Libro addPagina(Hoja pagina){
