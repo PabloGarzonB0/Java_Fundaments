@@ -1,4 +1,4 @@
-package Java_Oracle.Interfaces.Ejemplo1I;
+package ProyectoInterfaces.modelo;
 
 public class Informe extends Hoja {
     private String autor;
@@ -9,6 +9,7 @@ public class Informe extends Hoja {
         this.autor = autor;
         this.revisor = revisor;
     }
+    
     @Override
     public String imprimir() {
         return "Informe escrito por : " + autor
