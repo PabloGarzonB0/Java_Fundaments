@@ -1,4 +1,4 @@
-package ProyectoIterfaces/modelo;
+package ProyectoIterfaces.modelo;
 
 public enum Genero{
     DRAMA,

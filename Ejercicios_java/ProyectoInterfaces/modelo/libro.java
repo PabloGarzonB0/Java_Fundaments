@@ -1,7 +1,7 @@
 package ProyectoInterfaces.modelo;
 import java.util.List;
 
-public class Libro {
+public class Libro implements Imprimible{
     private List<Hoja> paginas;
     private String autor;
     private String titulo;
@@ -20,6 +20,7 @@ public class Libro {
         // Como una especie de actualizacion de clase
     }
     // Si no se agregan paginas, esta accion no estara disponible
+    @Override
     public String imprimir(){
             StringBuilder sb = new StringBuilder("Titulo: ");
             sb.append(this.titulo).append("\n")
