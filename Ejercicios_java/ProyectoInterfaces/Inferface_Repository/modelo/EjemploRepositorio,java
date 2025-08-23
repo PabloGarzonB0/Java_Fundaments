@@ -1,0 +1,21 @@
+package Java_Oracle.Interfaces.Ejemplo3I_Repository.repositorio;
+
+import Java_Oracle.Interfaces.Ejemplo3I_Repository.modelo.Cliente;
+
+import java.util.List;
+
+public class EjemploRepositorio {
+    public static void main(String[] args){
+        CrudRepositorio repo = new ClienteListRepositorio();
+        repo.crear(new Cliente("Jano", "Perez"));
+        repo.crear(new Cliente("Bea", "Gonzales"));
+        repo.crear(new Cliente("Luci", "Martinez"));
+        repo.crear(new Cliente("Andres", "Guzman"));
+
+        List<Cliente> clientes = repo.listar();
+        clientes.forEach(System.out::println);
+
+
+
+    }
+}
