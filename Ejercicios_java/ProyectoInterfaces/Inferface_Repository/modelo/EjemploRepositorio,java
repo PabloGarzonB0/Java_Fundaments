@@ -1,12 +1,11 @@
 package Java_Oracle.Interfaces.Ejemplo3I_Repository.repositorio;
 
 import Java_Oracle.Interfaces.Ejemplo3I_Repository.modelo.Cliente;
-
 import java.util.List;
 
 public class EjemploRepositorio {
     public static void main(String[] args){
-        CrudRepositorio repo = new ClienteListRepositorio();
+        OrdenableMaximum repo =  new ClienteListRepositorio2();
         repo.crear(new Cliente("Jano", "Perez"));
         repo.crear(new Cliente("Bea", "Gonzales"));
         repo.crear(new Cliente("Luci", "Martinez"));
@@ -15,11 +14,11 @@ public class EjemploRepositorio {
         List<Cliente> clientes = repo.listar();
         clientes.forEach(System.out::println);
         // ------------------- Paginable ---------------------------
-        List<Cliente> paginable = ((PaginableRepositorio)repo).listar(0, 3);
+        List<Cliente> paginable = (repo).listar(0, 3);
         paginable.forEach(System.out::println);
 
         System.out.println("====== ordenar =======");
-        List<Cliente> clientesOrdenAsc = ((OrdenableRepositorio)repo)
+        List<Cliente> clientesOrdenAsc = (repo)
                 .listar("nombre", Direccion.ASC);
         for(Cliente c: clientesOrdenAsc){
             System.out.println(c);
@@ -28,6 +27,18 @@ public class EjemploRepositorio {
         System.out.println("======= Editar ========");
         Cliente  beaActualizar = new Cliente("Bea", "Mena");
         beaActualizar.setId(2);
+        repo.editar(beaActualizar);
+        Cliente bea = repo.porId(2);
+        System.out.println(bea);
+        System.out.println("================||================");
+        repo.listar("nombre", Direccion.DESC).forEach(System.out::println);
+
+        System.out.println("===== Eliminar =====");
+        repo.eliminar(2);
+        repo.listar().forEach(System.out::println);
+
+        System.out.println("====== Total de elementos ======");
+        System.out.println("Total registros : " + repo.total());
 
     }
 }
