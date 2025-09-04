@@ -1,0 +1,58 @@
+Que son las excepciones?
+Es un problema o evento que ocurre durante la ejecucion del programa
+que interrumpe el flujo normal de operacion de un sistema
+
+Caracteristicas principales:
+- Separa el codigo que gestiona los errores del codigo principal del programa
+- Permite manejar el error y continuar con la ejecucion del programa
+- Agrupa y diferencia entre diferentes tipos de errores
+- Propaga errores hacia arriba en la pila de llamadas (Strack Trace)
+Sintaxis:
+
+try{
+    [Bloque que lanza la exception]
+}catch(Exception ex){
+    [Aca se maneja el error]
+}finally{
+    [Bloque opcional, se ejecuta siempre]
+}
+
+- La Clase Expetion
+Cuando se lanza una exception, lo que se hace es lanzar una instancia de Exception o de una clase derivada
+Esta clase tiene dos constructores y dos metodos importantes
+
+Ex:
+Exception e = new Exception();
+String mensaje = "Algun mensaje de error";
+Exception e = new Exception(mensaje);
+
+String mensaje = e.getMessage();
+e.printStackTrace();  // Imprime la traza completa de las excepciones
+Existen clases checked y unchecked
+
+La clausula throws se utiliza en la creacion de metodos, los metodos deben capturar o propagar todas las excepciones chequeadas
+que pueden ser lanzadas dentro de su ambito.
+
+Esto es con la clausula throws que lista una o varias excepciones que son lanzadas en el metodo
+
+Ejemplo:
+ Ex1.
+ public class ClienteRepositorio{
+    public Cliente porId(int id) throws Exception{
+    }
+}
+
+
+Ex1.2
+public Cliente porId(int id)throws Exception{
+if(id == 0){
+    throw new Exception("id no puede ser cero");
+}
+    [...]
+}
+
+Ex2.
+public static void main(String[] args) throws Exception{
+    ClienteRepositorio repo = new ClienteRepositorio();
+    Cliente cliente = repo.porId(2)
+}

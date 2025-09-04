@@ -13,7 +13,6 @@ public class BolsaSupermercado<T> {
         this.objetos = new ArrayList();
     }
 
-
     // Metodo de agregacion de objetos
     public void addProducto(T objeto) {
         if (this.objetos.size() <= max) {
