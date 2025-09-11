@@ -1,0 +1,16 @@
+Expresiones Lambda:
+- Es una forma corta de escribir funciones o bloques de codigo que peudes pasarcomo
+parametros a metodos o usar dentro de colecciones.
+- Es una manera de representar una funcion o procedimiento sin tener que escribir toda
+la estructura de un metodo.
+- Se integran desde la JDK 8, para incorporarse a la programacion funcional
+- Se conocen tambien como funciones anonimas, y basicamente implementan metodos sin
+necesidad de una clase
+
+Sintaxis de expresiones lambdas:
+Sin parametros: () -> Sentencia
+Con un parametro: Parametro -> sentencia
+Con mas de un parametro: (parametro1, parametro2) -> sentencia
+Con mas de una sentencia: (parametro) -> {sentencia 1;
+                                          sentencia 2;}
+Para poder implementar expresiones Lambda es necesario tener Interfaces funcionales.
